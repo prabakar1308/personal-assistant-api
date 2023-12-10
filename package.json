@@ -1,0 +1,20 @@
+{
+  "name": "personal-assistant-api",
+  "version": "1.0.0",
+  "description": "nsa api with firebase",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "prabakaran",
+  "license": "ISC",
+  "dependencies": {
+    "algoliasearch": "^4.19.1",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase": "^10.1.0",
+    "firebase-admin": "^11.10.1"
+  }
+}
