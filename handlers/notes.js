@@ -40,15 +40,9 @@ exports.masterCategories = async (req, res, db) => {
 exports.createMasterProduct = async (req, res, db) => {
   try {
     const id = req.body.id;
-    const masterProductRef = db
-      .collection("masterProducts")
-      .orderBy("name", "desc");
-    await masterProductRef.doc(id).set(req.body);
-    masterProductRef.get().then((snapshot) => {
-      const data = snapshot.docs.map((doc) => doc.data());
-
-      return res.status(200).json(data);
-    });
+    const masterProductRef = db.collection("masterProducts");
+    const response = await masterProductRef.doc(id).set(req.body);
+    res.send(response);
   } catch (error) {
     res.send(error);
   }
@@ -57,15 +51,9 @@ exports.createMasterProduct = async (req, res, db) => {
 exports.createMasterCategory = async (req, res, db) => {
   try {
     const id = req.body.id;
-    const masterCategoryRef = db
-      .collection("masterCategories")
-      .orderBy("name", "desc");
-    await masterCategoryRef.doc(id).set(req.body);
-    masterCategoryRef.get().then((snapshot) => {
-      const data = snapshot.docs.map((doc) => doc.data());
-
-      return res.status(200).json(data);
-    });
+    const masterCategoryRef = db.collection("masterCategories");
+    const response = await masterCategoryRef.doc(id).set(req.body);
+    res.send(response);
   } catch (error) {
     res.send(error);
   }
